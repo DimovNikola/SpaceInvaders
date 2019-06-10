@@ -16,5 +16,10 @@ namespace SpaceInvaders
             this.name = name;
             this.score = score;
         }
+
+        public override string ToString()
+        {
+            return name + " " + score.ToString();
+        }
     }
 }

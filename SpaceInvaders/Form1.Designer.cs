@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.accList = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.insertAccName = new System.Windows.Forms.TextBox();
-            this.addAccount = new System.Windows.Forms.Button();
             this.startGame = new System.Windows.Forms.Button();
+            this.addAccount = new System.Windows.Forms.Button();
+            this.insertAccName = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -62,7 +66,7 @@
             this.accList.FormattingEnabled = true;
             this.accList.Location = new System.Drawing.Point(3, 3);
             this.accList.Name = "accList";
-            this.accList.Size = new System.Drawing.Size(323, 523);
+            this.accList.Size = new System.Drawing.Size(323, 511);
             this.accList.TabIndex = 0;
             // 
             // groupBox1
@@ -71,6 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.startGame);
             this.groupBox1.Controls.Add(this.addAccount);
             this.groupBox1.Controls.Add(this.insertAccName);
@@ -81,34 +86,51 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create/Select Account";
             // 
+            // startGame
+            // 
+            this.startGame.BackColor = System.Drawing.Color.White;
+            this.startGame.ForeColor = System.Drawing.Color.Navy;
+            this.startGame.Location = new System.Drawing.Point(69, 289);
+            this.startGame.Name = "startGame";
+            this.startGame.Size = new System.Drawing.Size(185, 23);
+            this.startGame.TabIndex = 2;
+            this.startGame.Text = "Play";
+            this.startGame.UseVisualStyleBackColor = false;
+            this.startGame.Click += new System.EventHandler(this.startGame_Click);
+            // 
+            // addAccount
+            // 
+            this.addAccount.BackColor = System.Drawing.Color.White;
+            this.addAccount.ForeColor = System.Drawing.Color.Navy;
+            this.addAccount.Location = new System.Drawing.Point(69, 260);
+            this.addAccount.Name = "addAccount";
+            this.addAccount.Size = new System.Drawing.Size(95, 23);
+            this.addAccount.TabIndex = 1;
+            this.addAccount.Text = "Create Account";
+            this.addAccount.UseVisualStyleBackColor = false;
+            this.addAccount.Click += new System.EventHandler(this.addAccount_Click);
+            // 
             // insertAccName
             // 
             this.insertAccName.Location = new System.Drawing.Point(69, 225);
             this.insertAccName.Name = "insertAccName";
             this.insertAccName.Size = new System.Drawing.Size(185, 20);
             this.insertAccName.TabIndex = 0;
+            this.insertAccName.Validating += new System.ComponentModel.CancelEventHandler(this.insertAccName_Validating);
             // 
-            // addAccount
+            // errorProvider1
             // 
-            this.addAccount.BackColor = System.Drawing.Color.White;
-            this.addAccount.ForeColor = System.Drawing.Color.Navy;
-            this.addAccount.Location = new System.Drawing.Point(69, 263);
-            this.addAccount.Name = "addAccount";
-            this.addAccount.Size = new System.Drawing.Size(95, 23);
-            this.addAccount.TabIndex = 1;
-            this.addAccount.Text = "Create Account";
-            this.addAccount.UseVisualStyleBackColor = false;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // startGame
+            // button1
             // 
-            this.startGame.BackColor = System.Drawing.Color.White;
-            this.startGame.ForeColor = System.Drawing.Color.Navy;
-            this.startGame.Location = new System.Drawing.Point(161, 263);
-            this.startGame.Name = "startGame";
-            this.startGame.Size = new System.Drawing.Size(93, 23);
-            this.startGame.TabIndex = 2;
-            this.startGame.Text = "Play";
-            this.startGame.UseVisualStyleBackColor = false;
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(165, 260);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Delete Account";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -122,6 +144,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -134,6 +157,8 @@
         private System.Windows.Forms.Button startGame;
         private System.Windows.Forms.Button addAccount;
         private System.Windows.Forms.TextBox insertAccName;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

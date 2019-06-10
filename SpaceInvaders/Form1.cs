@@ -16,5 +16,36 @@ namespace SpaceInvaders
         {
             InitializeComponent();
         }
+
+        private bool addAccountClicked = false;
+
+        private void insertAccName_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(insertAccName.Text) && addAccountClicked)
+            {
+                e.Cancel = true;
+                addAccount.Enabled = false;
+                errorProvider1.SetError(insertAccName, "Please eneter an account name!");
+            }
+            else
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(insertAccName, null);
+            }
+        }
+
+        private void startGame_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addAccount_Click(object sender, EventArgs e)
+        {
+            addAccountClicked = true;
+            if (ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(insertAccName.Text, "Account created!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
