@@ -17,19 +17,22 @@ namespace SpaceInvaders
             InitializeComponent();
         }
 
+        List<Account> accounts = new List<Account>();
+
         private bool addAccountClicked = false;
 
         private void insertAccName_Validating(object sender, CancelEventArgs e)
         {
+            //addAccount.Enabled = true;
             if (string.IsNullOrEmpty(insertAccName.Text) && addAccountClicked)
             {
                 e.Cancel = true;
-                addAccount.Enabled = false;
+                //addAccount.Enabled = false;
                 errorProvider1.SetError(insertAccName, "Please eneter an account name!");
             }
             else
             {
-                e.Cancel = true;
+                e.Cancel = false;
                 errorProvider1.SetError(insertAccName, null);
             }
         }
@@ -45,7 +48,15 @@ namespace SpaceInvaders
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 MessageBox.Show(insertAccName.Text, "Account created!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Account account = new Account(insertAccName.Text, 0);
+                accounts.Add(account);
+                accList.Items.Add(account.ToString());
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
