@@ -61,9 +61,9 @@ namespace SpaceInvaders
                 accList.Items.Remove(accList.Items[accList.SelectedIndex]);
                 accounts.Remove((Account)accList.Items[accList.SelectedIndex]);
             }
-            catch(System.ArgumentOutOfRangeException)
+            catch(ArgumentOutOfRangeException)
             {
-
+                 
             }
         }
     }
