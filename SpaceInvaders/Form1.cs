@@ -56,7 +56,15 @@ namespace SpaceInvaders
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                accList.Items.Remove(accList.Items[accList.SelectedIndex]);
+                accounts.Remove((Account)accList.Items[accList.SelectedIndex]);
+            }
+            catch(System.ArgumentOutOfRangeException)
+            {
 
+            }
         }
     }
 }
