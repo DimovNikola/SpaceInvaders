@@ -8,3 +8,14 @@ C:\Users\nikdi\Desktop\Space Invaders VP\SpaceInvaders\SpaceInvaders\obj\Debug\S
 C:\Users\nikdi\Desktop\Space Invaders VP\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.CoreCompileInputs.cache
 C:\Users\nikdi\Desktop\Space Invaders VP\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
 C:\Users\nikdi\Desktop\Space Invaders VP\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe
+C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.pdb
+C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csprojAssemblyReference.cache
+C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.Form1.resources
+C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.GameMap.resources
+C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.Properties.Resources.resources
+C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.GenerateResource.cache
+C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.CoreCompileInputs.cache
+C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb

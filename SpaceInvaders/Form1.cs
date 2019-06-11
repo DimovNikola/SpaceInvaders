@@ -39,7 +39,8 @@ namespace SpaceInvaders
 
         private void startGame_Click(object sender, EventArgs e)
         {
-
+            GameMap gameMap = new GameMap();
+            gameMap.Show();
         }
 
         private void addAccount_Click(object sender, EventArgs e)
@@ -65,6 +66,11 @@ namespace SpaceInvaders
             {
                  
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

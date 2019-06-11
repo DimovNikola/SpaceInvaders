@@ -53,10 +53,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameMap.Designer.cs">
+      <DependentUpon>GameMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameMap.resx">
+      <DependentUpon>GameMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -66,6 +75,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -79,6 +89,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\57-578462_space-invaders-alien-png-photo-space-invaders-alien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ammo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hero.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bigDaddyG.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
