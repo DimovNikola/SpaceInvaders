@@ -19,3 +19,4 @@ C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.c
 C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.CoreCompileInputs.cache
 C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
 C:\Users\bestisoft\Desktop\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\nikdi\Desktop\Space Invaders VP\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.GameMap.resources

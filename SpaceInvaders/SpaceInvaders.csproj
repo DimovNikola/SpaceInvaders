@@ -91,19 +91,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\57-578462_space-invaders-alien-png-photo-space-invaders-alien.png" />
+    <None Include="Resources\alien.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\alien.png" />
+    <None Include="Resources\hero.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ammo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hero.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bigDaddyG.jpg" />
+    <None Include="Resources\bullet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
