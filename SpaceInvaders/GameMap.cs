@@ -17,7 +17,7 @@ namespace SpaceInvaders
         int speed = 5;
         int score = 0;
         bool isPressed;
-        int totalEnemies = 8;
+        int totalEnemies = 10;
         int playerSpeed = 6;
         public GameMap()
         {
@@ -39,6 +39,11 @@ namespace SpaceInvaders
             {
                 goRight = true;
             }
+            if(e.KeyCode == Keys.Space && !isPressed)
+            {
+                isPressed = true;
+                shootBullet();
+            }
         }
         private void keyIsUp(object sender, KeyEventArgs e)
         {
@@ -50,6 +55,10 @@ namespace SpaceInvaders
             {
                 goRight = false;
             }
+            if (isPressed)
+            {
+                isPressed = false;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -58,10 +67,58 @@ namespace SpaceInvaders
             {
                 player.Left += playerSpeed;
             }
+
             if (goLeft)
             {
                 player.Left -= playerSpeed;
             }
+
+            foreach(Control y in this.Controls)
+            {
+                if(y is PictureBox && y.Tag == "bullet")
+                {
+                    y.Top -= 20; // bullet should move now
+                    if(((PictureBox) y).Top < this.Height - 490)
+                    {
+                        this.Controls.Remove(y); // bullet is no longer on the map so.. delete it!
+                    }
+                }
+            }
+
+            foreach(Control x in this.Controls)
+            {
+                if(x is PictureBox && x.Tag == "invader")
+                {
+                    if(((PictureBox)x).Bottom > this.Height - 90)
+                    {
+                        gameOver();
+                    }
+                    else
+                    {
+                        x.Top += 2;
+                    }
+                    
+
+                }
+            }
+        }
+
+        private void shootBullet()
+        {
+            PictureBox bullet = new PictureBox();
+            bullet.Image = Properties.Resources.bullet;
+            bullet.Size = new Size(5, 20);
+            bullet.Tag = "bullet";
+            bullet.Left = player.Left + player.Width / 2; // we want this in the middle
+            bullet.Top = player.Top - 20; // we want the bullet over the player model (20 pixels above)
+            this.Controls.Add(bullet);
+            bullet.BringToFront();
+        }
+
+        private void gameOver()
+        {
+            timer1.Stop();
+            label2.Text += "Game Over";
         }
     }
 }

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.invader = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -73,21 +72,9 @@
             this.label2.ForeColor = System.Drawing.Color.Lime;
             this.label2.Location = new System.Drawing.Point(12, 428);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 24);
+            this.label2.Size = new System.Drawing.Size(90, 24);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Score:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Lime;
-            this.label3.Location = new System.Drawing.Point(83, 428);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Tag = "invaders";
-            this.label3.Text = "0";
+            this.label2.Text = "Score: 00";
             // 
             // invader
             // 
@@ -98,7 +85,7 @@
             this.invader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.invader.TabIndex = 5;
             this.invader.TabStop = false;
-            this.invader.Tag = "invaders";
+            this.invader.Tag = "invader";
             // 
             // player
             // 
@@ -119,7 +106,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "invaders";
+            this.pictureBox1.Tag = "invader";
             // 
             // pictureBox2
             // 
@@ -130,7 +117,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Tag = "invaders";
+            this.pictureBox2.Tag = "invader";
             // 
             // pictureBox3
             // 
@@ -141,7 +128,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Tag = "invaders";
+            this.pictureBox3.Tag = "invader";
             // 
             // pictureBox4
             // 
@@ -152,7 +139,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Tag = "invaders";
+            this.pictureBox4.Tag = "invader";
             // 
             // pictureBox5
             // 
@@ -163,7 +150,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 10;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Tag = "invaders";
+            this.pictureBox5.Tag = "invader";
             // 
             // pictureBox6
             // 
@@ -174,7 +161,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 11;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Tag = "invaders";
+            this.pictureBox6.Tag = "invader";
             // 
             // pictureBox7
             // 
@@ -185,7 +172,7 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 12;
             this.pictureBox7.TabStop = false;
-            this.pictureBox7.Tag = "invaders";
+            this.pictureBox7.Tag = "invader";
             // 
             // pictureBox8
             // 
@@ -196,7 +183,7 @@
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 13;
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.Tag = "invaders";
+            this.pictureBox8.Tag = "invader";
             // 
             // pictureBox9
             // 
@@ -207,7 +194,7 @@
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 14;
             this.pictureBox9.TabStop = false;
-            this.pictureBox9.Tag = "invaders";
+            this.pictureBox9.Tag = "invader";
             // 
             // timer1
             // 
@@ -232,7 +219,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.invader);
             this.Controls.Add(this.player);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "GameMap";
@@ -259,7 +245,6 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.PictureBox player;
         public System.Windows.Forms.PictureBox invader;
