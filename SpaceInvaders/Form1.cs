@@ -39,7 +39,7 @@ namespace SpaceInvaders
 
         private void startGame_Click(object sender, EventArgs e)
         {
-            GameMap gameMap = new GameMap();
+            GameMap gameMap = new GameMap(accounts[accList.SelectedIndex].score);
             gameMap.Show();
         }
 

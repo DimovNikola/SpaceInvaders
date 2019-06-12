@@ -14,13 +14,14 @@ namespace SpaceInvaders
     {
         bool goLeft = false;
         bool goRight = false;
-        int speed = 5;
+        int speed = 1;
         int score = 0;
         bool isPressed;
         int totalEnemies = 10;
         int playerSpeed = 6;
-        public GameMap()
+        public GameMap(int score)
         {
+            this.score = score;
             InitializeComponent();
         }
 
@@ -94,10 +95,8 @@ namespace SpaceInvaders
                         gameOver();
                         break;
                     }
-                    else
-                    {
-                        x.Top += 1;
-                    }
+                    x.Top += speed;
+                 
                 }
             }
 

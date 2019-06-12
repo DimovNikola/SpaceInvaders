@@ -9,7 +9,7 @@ namespace SpaceInvaders
     public class Account
     {
         private string name { get; set; }
-        private int score { get; set; }
+        public int score { get; set; }
 
         public Account(string name, int score)
         {

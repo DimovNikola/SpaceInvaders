@@ -68,9 +68,10 @@
             // scoreLabel
             // 
             this.scoreLabel.AutoSize = true;
+            this.scoreLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.ForeColor = System.Drawing.Color.Lime;
-            this.scoreLabel.Location = new System.Drawing.Point(12, 428);
+            this.scoreLabel.Location = new System.Drawing.Point(0, 437);
             this.scoreLabel.Name = "scoreLabel";
             this.scoreLabel.Size = new System.Drawing.Size(90, 24);
             this.scoreLabel.TabIndex = 2;
@@ -79,8 +80,9 @@
             // 
             // invader
             // 
+            this.invader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.invader.Image = global::SpaceInvaders.Properties.Resources.alien;
-            this.invader.Location = new System.Drawing.Point(424, 168);
+            this.invader.Location = new System.Drawing.Point(478, 122);
             this.invader.Name = "invader";
             this.invader.Size = new System.Drawing.Size(50, 50);
             this.invader.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -90,6 +92,7 @@
             // 
             // player
             // 
+            this.player.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player.Image = global::SpaceInvaders.Properties.Resources.hero;
             this.player.Location = new System.Drawing.Point(271, 411);
             this.player.Name = "player";
@@ -100,8 +103,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::SpaceInvaders.Properties.Resources.alien;
-            this.pictureBox1.Location = new System.Drawing.Point(282, 168);
+            this.pictureBox1.Location = new System.Drawing.Point(303, 141);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,8 +115,9 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::SpaceInvaders.Properties.Resources.alien;
-            this.pictureBox2.Location = new System.Drawing.Point(483, 88);
+            this.pictureBox2.Location = new System.Drawing.Point(574, 63);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -122,8 +127,9 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = global::SpaceInvaders.Properties.Resources.alien;
-            this.pictureBox3.Location = new System.Drawing.Point(415, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(436, 16);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -133,8 +139,9 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.Image = global::SpaceInvaders.Properties.Resources.alien;
-            this.pictureBox4.Location = new System.Drawing.Point(349, 88);
+            this.pictureBox4.Location = new System.Drawing.Point(396, 92);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(50, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -144,8 +151,9 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox5.Image = global::SpaceInvaders.Properties.Resources.alien;
-            this.pictureBox5.Location = new System.Drawing.Point(282, 12);
+            this.pictureBox5.Location = new System.Drawing.Point(303, 16);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(50, 50);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -155,8 +163,9 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox6.Image = global::SpaceInvaders.Properties.Resources.alien;
-            this.pictureBox6.Location = new System.Drawing.Point(214, 88);
+            this.pictureBox6.Location = new System.Drawing.Point(210, 92);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(50, 50);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -166,8 +175,9 @@
             // 
             // pictureBox7
             // 
+            this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox7.Image = global::SpaceInvaders.Properties.Resources.alien;
-            this.pictureBox7.Location = new System.Drawing.Point(144, 12);
+            this.pictureBox7.Location = new System.Drawing.Point(165, 16);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(50, 50);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -177,8 +187,9 @@
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox8.Image = global::SpaceInvaders.Properties.Resources.alien;
-            this.pictureBox8.Location = new System.Drawing.Point(76, 88);
+            this.pictureBox8.Location = new System.Drawing.Point(40, 63);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(50, 50);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -188,8 +199,9 @@
             // 
             // pictureBox9
             // 
+            this.pictureBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox9.Image = global::SpaceInvaders.Properties.Resources.alien;
-            this.pictureBox9.Location = new System.Drawing.Point(144, 168);
+            this.pictureBox9.Location = new System.Drawing.Point(117, 141);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(50, 50);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
