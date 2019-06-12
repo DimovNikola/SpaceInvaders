@@ -92,14 +92,39 @@ namespace SpaceInvaders
                     if(((PictureBox)x).Bottom > this.Height - 90)
                     {
                         gameOver();
+                        break;
                     }
                     else
                     {
-                        x.Top += 2;
+                        x.Top += 1;
                     }
-                    
-
                 }
+            }
+
+            foreach(Control i in this.Controls)
+            {
+                foreach(Control j in this.Controls)
+                {
+                    if(i is PictureBox && i.Tag == "invader")
+                    {
+                        if(j is PictureBox && j.Tag == "bullet")
+                        {
+                            if (i.Bounds.IntersectsWith(j.Bounds))
+                            {
+                                score++;
+                                this.Controls.Remove(i);
+                                this.Controls.Remove(j);
+                            }
+                        }
+                    }
+                }
+            }
+
+            scoreLabel.Text = "Score: " + score;
+            if(score > totalEnemies - 1)
+            {
+                gameOver();
+                MessageBox.Show("You Saved Earth!"); // fix this later pls!
             }
         }
 
@@ -118,7 +143,12 @@ namespace SpaceInvaders
         private void gameOver()
         {
             timer1.Stop();
-            label2.Text += "Game Over";
+            scoreLabel.Text += " Game Over";
+        }
+        
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
