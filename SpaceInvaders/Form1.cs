@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace SpaceInvaders
 {
     public partial class Form1 : Form
     {
+        
+        
+        
         public Form1()
         {
             InitializeComponent();
@@ -42,7 +48,7 @@ namespace SpaceInvaders
             GameMap gameMap = new GameMap(accounts[accList.SelectedIndex].score);
             gameMap.Show();
         }
-
+        
         private void addAccount_Click(object sender, EventArgs e)
         {
             addAccountClicked = true;
@@ -50,6 +56,7 @@ namespace SpaceInvaders
             {
                 MessageBox.Show(insertAccName.Text, "Account created!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Account account = new Account(insertAccName.Text, 0);
+             
                 accounts.Add(account);
                 accList.Items.Add(account.ToString());
             }
@@ -61,6 +68,7 @@ namespace SpaceInvaders
             {
                 accList.Items.Remove(accList.Items[accList.SelectedIndex]);
                 accounts.Remove((Account)accList.Items[accList.SelectedIndex]);
+
             }
             catch(ArgumentOutOfRangeException)
             {
@@ -70,7 +78,7 @@ namespace SpaceInvaders
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

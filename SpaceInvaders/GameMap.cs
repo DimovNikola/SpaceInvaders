@@ -17,7 +17,7 @@ namespace SpaceInvaders
         int speed = 1;
         int score = 0;
         bool isPressed;
-        int totalEnemies = 10;
+        int totalEnemies = 14;
         int playerSpeed = 6;
         public GameMap(int score)
         {
@@ -141,8 +141,8 @@ namespace SpaceInvaders
 
         private void gameOver()
         {
+            label2.Visible = true;
             timer1.Stop();
-            scoreLabel.Text += " Game Over";
         }
         
         private void label2_Click(object sender, EventArgs e)
