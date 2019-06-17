@@ -31,6 +31,56 @@ namespace SpaceInvaders
             FileName = "Untitled";
         }        
 
+        private void saveFile()
+        {
+            if (FileName == "Untitled")
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Accounts doc file (*.acc)|*.acc";
+                saveFileDialog.Title = "Save accounts doc";
+                saveFileDialog.FileName = FileName;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    FileName = saveFileDialog.FileName;
+                }
+            }
+            if (FileName != null)
+            {
+                using(FileStream fileStream = new FileStream(FileName, FileMode.Create))
+                {
+                    IFormatter formatter = new BinaryFormatter();
+                    formatter.Serialize(fileStream, accDoc);
+                }
+            }
+        }
+
+        private void openFile()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Accounts doc file (*.acc)|*.acc";
+            openFileDialog.Title = "Open accounts doc file";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                FileName = openFileDialog.FileName;
+                try
+                {
+                    using (FileStream fileStream = new FileStream(FileName, FileMode.Open))
+                    {
+                        IFormatter formater = new BinaryFormatter();
+                        accDoc = (AccountDoc)formater.Deserialize(fileStream);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Could not read file: " + FileName);
+                    FileName = null;
+                    return;
+                }
+                
+            }
+
+        }
+
         private bool addAccountClicked = false;
 
         private void insertAccName_Validating(object sender, CancelEventArgs e)
@@ -65,6 +115,7 @@ namespace SpaceInvaders
              
                 accDoc.addAccount(account);
                 accList.Items.Add(account.ToString());
+                saveFile();
             }
         }
 
@@ -84,7 +135,13 @@ namespace SpaceInvaders
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            if (accList.Size != null) {
+                openFile();
+            }
+            foreach (Account acc in accDoc.getAccList())
+            {
+                accList.Items.Add(acc.ToString());
+            }
         }
     }
 }
