@@ -15,15 +15,21 @@ namespace SpaceInvaders
 {
     public partial class Form1 : Form
     {
-        
-        
-        
+        private AccountDoc accDoc;
+        //List<Account> accounts = new List<Account>();
+        private String FileName;
+
         public Form1()
         {
             InitializeComponent();
+            newDoc();
         }
 
-        List<Account> accounts = new List<Account>();
+        private void newDoc()
+        {
+            accDoc = new AccountDoc();
+            FileName = "Untitled";
+        }        
 
         private bool addAccountClicked = false;
 
@@ -45,7 +51,7 @@ namespace SpaceInvaders
 
         private void startGame_Click(object sender, EventArgs e)
         {
-            GameMap gameMap = new GameMap(accounts[accList.SelectedIndex].score);
+            GameMap gameMap = new GameMap(accDoc.accounts[accList.SelectedIndex].score);
             gameMap.Show();
         }
         
@@ -57,7 +63,7 @@ namespace SpaceInvaders
                 MessageBox.Show(insertAccName.Text, "Account created!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Account account = new Account(insertAccName.Text, 0);
              
-                accounts.Add(account);
+                accDoc.addAccount(account);
                 accList.Items.Add(account.ToString());
             }
         }
@@ -67,7 +73,7 @@ namespace SpaceInvaders
             try
             {
                 accList.Items.Remove(accList.Items[accList.SelectedIndex]);
-                accounts.Remove((Account)accList.Items[accList.SelectedIndex]);
+                accDoc.removeAccount((Account)accList.Items[accList.SelectedIndex]);
 
             }
             catch(ArgumentOutOfRangeException)
