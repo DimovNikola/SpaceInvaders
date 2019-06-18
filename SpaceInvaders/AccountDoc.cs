@@ -30,6 +30,18 @@ namespace SpaceInvaders
             return accounts.Count;
         }
 
+        public Account getAccount(Account account)
+        {
+            foreach(Account acc in accounts)
+            {
+                if(acc == account)
+                {
+                    return acc;
+                }
+            }
+            return null;
+        }
+
         public void removeAccount(Account acc)
         {
             accounts.Remove(acc);

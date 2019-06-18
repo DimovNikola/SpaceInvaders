@@ -11,7 +11,7 @@ namespace SpaceInvaders
     [Serializable]
     public class Account : ISerializable
     {
-        private string name { get; set; }
+        public string name { get; set; }
         public int score { get; set; }
 
         public Account(string name, int score)

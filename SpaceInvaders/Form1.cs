@@ -15,22 +15,23 @@ namespace SpaceInvaders
 {
     public partial class Form1 : Form
     {
+        public List<Account> accounts = new List<Account>();
         private AccountDoc accDoc;
         private String FileName;
-
+        public int finalScore = 0;
         public Form1()
         {
             InitializeComponent();
             newDoc();
         }
 
-        private void newDoc()
+        public void newDoc()
         {
             accDoc = new AccountDoc();
             FileName = "Untitled";
         }        
 
-        private void saveFile()
+        public void saveFile()
         {
             if (FileName == "Untitled")
             {
@@ -53,7 +54,7 @@ namespace SpaceInvaders
             }
         }
 
-        private void openFile()
+        public void openFile()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Accounts doc file (*.acc)|*.acc";
@@ -98,7 +99,7 @@ namespace SpaceInvaders
 
         private void startGame_Click(object sender, EventArgs e)
         {
-            GameMap gameMap = new GameMap(accDoc.accounts[accList.SelectedIndex].score);
+            GameMap gameMap = new GameMap(accDoc.accounts[accList.SelectedIndex], accDoc);
             gameMap.Show();
         }
         
@@ -109,6 +110,7 @@ namespace SpaceInvaders
             {
                 MessageBox.Show(insertAccName.Text, "Account created!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Account account = new Account(insertAccName.Text, 0);
+                accounts.Add(account);
                 accDoc.addAccount(account);
                 accList.Items.Add(account);
                 saveFile();
@@ -120,6 +122,7 @@ namespace SpaceInvaders
             try
             {
                 accDoc.removeAccount((Account)accList.Items[accList.SelectedIndex]);
+                accounts.Remove((Account)accList.Items[accList.SelectedIndex]);
                 accList.Items.Remove(accList.Items[accList.SelectedIndex]);               
                 saveFile();
             }
