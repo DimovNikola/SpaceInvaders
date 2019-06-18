@@ -16,7 +16,6 @@ namespace SpaceInvaders
     public partial class Form1 : Form
     {
         private AccountDoc accDoc;
-        //List<Account> accounts = new List<Account>();
         private String FileName;
 
         public Form1()
@@ -85,11 +84,9 @@ namespace SpaceInvaders
 
         private void insertAccName_Validating(object sender, CancelEventArgs e)
         {
-            //addAccount.Enabled = true;
             if (string.IsNullOrEmpty(insertAccName.Text) && addAccountClicked)
             {
                 e.Cancel = true;
-                //addAccount.Enabled = false;
                 errorProvider1.SetError(insertAccName, "Please eneter an account name!");
             }
             else
@@ -112,9 +109,8 @@ namespace SpaceInvaders
             {
                 MessageBox.Show(insertAccName.Text, "Account created!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Account account = new Account(insertAccName.Text, 0);
-             
                 accDoc.addAccount(account);
-                accList.Items.Add(account.ToString());
+                accList.Items.Add(account);
                 saveFile();
             }
         }
@@ -123,14 +119,15 @@ namespace SpaceInvaders
         {
             try
             {
-                accList.Items.Remove(accList.Items[accList.SelectedIndex]);
                 accDoc.removeAccount((Account)accList.Items[accList.SelectedIndex]);
-
+                accList.Items.Remove(accList.Items[accList.SelectedIndex]);               
+                saveFile();
             }
             catch(ArgumentOutOfRangeException)
             {
                  
             }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -140,7 +137,7 @@ namespace SpaceInvaders
             }
             foreach (Account acc in accDoc.getAccList())
             {
-                accList.Items.Add(acc.ToString());
+                accList.Items.Add(acc);
             }
         }
     }
