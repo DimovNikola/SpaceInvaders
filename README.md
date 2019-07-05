@@ -28,3 +28,35 @@ Windows Forms Project by: Nikola Dimov
 * Играта никогаш не се победува!
 * После секој уништен бран од непријатели се појавуа нов бран со нови непријатели
 * вашата цел е што подолго време да избегнете колизија помеѓу некои од непријателите и „борбената линија“ на херојот(висината на која што се наоѓа херојот на самата „мапа“). Ова се постигнува со уништување на непријателот.
+
+## 3. Претставување на проблемот
+```c#
+public partial class GameMap : Form
+    {
+        Form1 form = new Form1();
+        //move left
+        bool goLeft = false;
+        //move right
+        bool goRight = false;
+        //speed for enemies
+        int speed = 1;
+        //overall score
+        int score = 0;
+        //if button is pressed
+        bool isPressed;
+        //keep the number of enemies (added dynamically)
+        int totalEnemies = 0;
+        //the players speed
+        int playerSpeed = 6;
+        //account document
+        AccountDoc accDoc;
+        //an account
+        Account account;
+        //name of the file used to store accounts
+        private String FileName;
+        //gameplay audio
+        private SoundPlayer soundPlayer;
+        //game over audio
+        private SoundPlayer soundPlayer1;
+    }
+```
