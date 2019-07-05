@@ -30,6 +30,7 @@ Windows Forms Project by: Nikola Dimov
 * вашата цел е што подолго време да избегнете колизија помеѓу некои од непријателите и „борбената линија“ на херојот(висината на која што се наоѓа херојот на самата „мапа“). Ова се постигнува со уништување на непријателот.
 
 ## 3. Претставување на проблемот
+Главните податоци и функции се чуваат во класата GameMap која што наследува од класата Form. 
 ```c#
 public partial class GameMap : Form
     {
@@ -58,5 +59,16 @@ public partial class GameMap : Form
         private SoundPlayer soundPlayer;
         //game over audio
         private SoundPlayer soundPlayer1;
+        //list to keep all of the enemies
+        List<Control> enemies = new List<Control>();
     }
+```
+При секое стартување на играта, се читаат сметките од фајлот каде што се чуваат, а при завршување на играта се зачувуваат во истиот фајл. Ова работи со серијализација и десеријализација.
+
+```c#
+[Serializable]
+public class AccountDoc
+
+[Serializable]
+public class Account : ISerializable
 ```
