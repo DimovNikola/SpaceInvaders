@@ -6,5 +6,6 @@ Windows Forms Project by: Nikola Dimov
 ## 2.Упатство за користење
 ### 2.1Креирање на сметка
 ![alt text](https://github.com/DimovNikola/SpaceInvaders/blob/master/createAccount.png "Create Account")
+
 Креирањето на сметка е едноставно.
 При стартување на апликацијата се отвора прозорец како на слика 1.
