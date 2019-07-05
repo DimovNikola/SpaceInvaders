@@ -101,7 +101,7 @@ public class Account : ISerializable
 ***
 ***
 
-# 1. Documentation in English
+# Documentation in English
 
 ## 1. Description
 This application represents the classic arcade game Space Invaders. However even if it's not exactly the same as the original, it is fairly close to it. The application design is in a retro like style, the game has some functionalities such as saving and deleting the accounts along with their last scores.
