@@ -19,3 +19,5 @@ Windows Forms Project by: Nikola Dimov
 ![alt text](https://github.com/DimovNikola/SpaceInvaders/blob/master/playGame.png "Play Game")
 
 Доколку сакате да ја стартувате играта, тоа го правите така што ја селектирате сметката на која што сакате да се зачуваат вашите поени и потоа притискате на копчето „Play“ како што е прикажано на „слика 3“ со што се отвора новиот прозорец каде што започнува самата игра („слика 4“). 
+
+![alt text](https://github.com/DimovNikola/SpaceInvaders/blob/master/gameplay.png "Gameplay")
