@@ -121,10 +121,14 @@ namespace SpaceInvaders
         {
             try
             {
-                accDoc.removeAccount((Account)accList.Items[accList.SelectedIndex]);
-                accounts.Remove((Account)accList.Items[accList.SelectedIndex]);
-                accList.Items.Remove(accList.Items[accList.SelectedIndex]);               
-                saveFile();
+                if (MessageBox.Show("Are you sure you want to delete this account?", button1.Text, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+
+                    accDoc.removeAccount((Account)accList.Items[accList.SelectedIndex]);
+                    accounts.Remove((Account)accList.Items[accList.SelectedIndex]);
+                    accList.Items.Remove(accList.Items[accList.SelectedIndex]);
+                    saveFile();
+                }
             }
             catch(ArgumentOutOfRangeException)
             {
