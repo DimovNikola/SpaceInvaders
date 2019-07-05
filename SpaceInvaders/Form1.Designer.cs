@@ -32,18 +32,18 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.accList = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.instructions = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.insertAccName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.addAccount = new System.Windows.Forms.Button();
             this.startGame = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.instructions = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.instructions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -93,6 +93,42 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Create/Select Account";
             // 
+            // instructions
+            // 
+            this.instructions.BackColor = System.Drawing.Color.RoyalBlue;
+            this.instructions.Controls.Add(this.label2);
+            this.instructions.Controls.Add(this.label1);
+            this.instructions.Location = new System.Drawing.Point(0, 36);
+            this.instructions.Name = "instructions";
+            this.instructions.Size = new System.Drawing.Size(317, 176);
+            this.instructions.TabIndex = 4;
+            this.instructions.TabStop = false;
+            this.instructions.Text = "Instructions";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.SaddleBrown;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Chartreuse;
+            this.label2.Location = new System.Drawing.Point(78, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "PRESS SPACE TO FIRE";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Chartreuse;
+            this.label1.Location = new System.Drawing.Point(18, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(290, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "USE ARROW KEYS  TO MOVE LEFT AND RIGTH";
+            // 
             // insertAccName
             // 
             this.insertAccName.Location = new System.Drawing.Point(66, 218);
@@ -140,42 +176,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // instructions
-            // 
-            this.instructions.BackColor = System.Drawing.Color.RoyalBlue;
-            this.instructions.Controls.Add(this.label2);
-            this.instructions.Controls.Add(this.label1);
-            this.instructions.Location = new System.Drawing.Point(0, 36);
-            this.instructions.Name = "instructions";
-            this.instructions.Size = new System.Drawing.Size(317, 176);
-            this.instructions.TabIndex = 4;
-            this.instructions.TabStop = false;
-            this.instructions.Text = "Instructions";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label1.Location = new System.Drawing.Point(18, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "USE ARROW KEYS  TO MOVE LEFT AND RIGTH";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.SaddleBrown;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label2.Location = new System.Drawing.Point(78, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "PRESS SPACE TO FIRE";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,9 +189,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.instructions.ResumeLayout(false);
             this.instructions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
