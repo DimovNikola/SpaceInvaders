@@ -40,7 +40,6 @@ namespace SpaceInvaders
             soundPlayer.Play();
             this.accDoc = accDoc;
             account = selectedAcc;
-            //this.accDoc.accounts.Remove(account);
             InitializeComponent();
         }
 
@@ -163,7 +162,6 @@ namespace SpaceInvaders
             if(score > totalEnemies - 1)
             {
                 generateNewWave();
-                //MessageBox.Show("You Saved Earth!");  fix this later pls!
             }
         }
 
@@ -173,10 +171,10 @@ namespace SpaceInvaders
             {
                 if (y is PictureBox && y.Tag == "bullet")
                 {
-                    y.Top -= 20; // bullet should move now
+                    y.Top -= 20; 
                     if (((PictureBox)y).Top < this.Height - 490)
                     {
-                        this.Controls.Remove(y); // bullet is no longer on the map so.. delete it!
+                        this.Controls.Remove(y); 
                     }
                 }
             }
@@ -218,8 +216,8 @@ namespace SpaceInvaders
             bullet.Image = Properties.Resources.bullet;
             bullet.Size = new Size(5, 20);
             bullet.Tag = "bullet";
-            bullet.Left = player.Left + player.Width / 2; // we want this in the middle
-            bullet.Top = player.Top - 20; // we want the bullet over the player model (20 pixels above)
+            bullet.Left = player.Left + player.Width / 2; 
+            bullet.Top = player.Top - 20; 
             this.Controls.Add(bullet);
             bullet.BringToFront();
         }
