@@ -30,11 +30,13 @@ namespace SpaceInvaders
         Account account;
         private String FileName;
         private SoundPlayer soundPlayer;
+        private SoundPlayer soundPlayer1;
 
         public GameMap(Account selectedAcc, AccountDoc accDoc)
         {
             newDoc();
             soundPlayer = new SoundPlayer("audio.wav");
+            soundPlayer1 = new SoundPlayer("gameOverAudio.wav");
             soundPlayer.Play();
             this.accDoc = accDoc;
             account = selectedAcc;
@@ -185,6 +187,7 @@ namespace SpaceInvaders
                     if (((PictureBox)x).Bottom > this.Height - 90)
 
                     {
+                        soundPlayer.Stop();
                         gameOver();
                         break;
                     }
@@ -250,7 +253,8 @@ namespace SpaceInvaders
             accDoc.getAccount(account).score = score;           
             saveFile();
             label2.Visible = true;
-            soundPlayer.Stop();
+            
+            soundPlayer1.Play();
         }
         
         private void label2_Click(object sender, EventArgs e)
