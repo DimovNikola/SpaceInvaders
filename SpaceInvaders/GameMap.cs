@@ -11,6 +11,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace SpaceInvaders
 {
@@ -28,10 +29,13 @@ namespace SpaceInvaders
         AccountDoc accDoc;
         Account account;
         private String FileName;
+        private SoundPlayer soundPlayer;
 
         public GameMap(Account selectedAcc, AccountDoc accDoc)
         {
             newDoc();
+            soundPlayer = new SoundPlayer("audio.wav");
+            soundPlayer.Play();
             this.accDoc = accDoc;
             account = selectedAcc;
             //this.accDoc.accounts.Remove(account);
@@ -246,7 +250,7 @@ namespace SpaceInvaders
             accDoc.getAccount(account).score = score;           
             saveFile();
             label2.Visible = true;
-            
+            soundPlayer.Stop();
         }
         
         private void label2_Click(object sender, EventArgs e)
