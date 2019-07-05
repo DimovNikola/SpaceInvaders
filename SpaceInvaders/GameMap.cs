@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
@@ -22,7 +23,7 @@ namespace SpaceInvaders
         int speed = 1;
         int score = 0;
         bool isPressed;
-        int totalEnemies = 14;
+        int totalEnemies = 0;
         int playerSpeed = 6;
         AccountDoc accDoc;
         Account account;
@@ -45,7 +46,65 @@ namespace SpaceInvaders
 
         private void GameMap_Load(object sender, EventArgs e)
         {
-            
+            generateNewWave();
+            this.timer1.Start();
+        }
+
+        List<Control> enemies = new List<Control>();
+
+        private void fillList()
+        {
+            if (enemies.Count > 0) enemies.Clear();
+
+            for (int x = 1; x <= 4; x++)
+            {
+                int xPos = (x-1) * 150 +50;
+                int yPos = 0;
+
+                if (x % 2 == 0)
+                {
+                    for (int y = 1; y <= 4; y++)
+                    {
+                        yPos = (y-1) * 60 ;
+                        generateEnemy(xPos, yPos);
+                    }
+                } else
+                {
+                    for (int y = 1; y <= 5; y++)
+                    {
+                        yPos = (y - 1) * 60 + 10;
+                        generateEnemy(xPos, yPos);
+                    }
+                }
+            }
+        }
+
+        private void generateEnemy(int x, int y)
+        {
+            PictureBox pb = new PictureBox();
+
+            pb.Location = new Point(x, y);
+            pb.Tag = "invader";
+            pb.Name = "pb" + enemies.Count;
+            pb.Image = global::SpaceInvaders.Properties.Resources.alien;
+
+            pb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            pb.Size = new System.Drawing.Size(50, 50);
+            pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pb.TabIndex = 5;
+            pb.TabStop = false;
+
+            enemies.Add(pb);
+        }
+
+        private void generateNewWave()
+        {
+            fillList();
+            foreach (Control x in enemies)
+            {
+                this.Controls.Add(x);
+                totalEnemies += 1;
+            }
         }
 
         private void keyIsDown(object sender, KeyEventArgs e)
@@ -92,56 +151,57 @@ namespace SpaceInvaders
                 player.Left -= playerSpeed;
             }
 
-            foreach(Control y in this.Controls)
+            updateEnemiesPosition();
+
+            scoreLabel.Text = "Score: " + score;
+            if(score > totalEnemies - 1)
             {
-                if(y is PictureBox && y.Tag == "bullet")
+                generateNewWave();
+                //MessageBox.Show("You Saved Earth!");  fix this later pls!
+            }
+        }
+
+        private void updateEnemiesPosition()
+        {
+            foreach (Control y in this.Controls)
+            {
+                if (y is PictureBox && y.Tag == "bullet")
                 {
                     y.Top -= 20; // bullet should move now
-                    if(((PictureBox) y).Top < this.Height - 490)
+                    if (((PictureBox)y).Top < this.Height - 490)
                     {
                         this.Controls.Remove(y); // bullet is no longer on the map so.. delete it!
                     }
                 }
             }
 
-            foreach(Control x in this.Controls)
+            foreach (Control x in this.Controls)
             {
-                if(x is PictureBox && x.Tag == "invader")
-                {
-                    if(((PictureBox)x).Bottom > this.Height - 90)
+                if (x is PictureBox && x.Tag == "invader") {
+                    if (((PictureBox)x).Bottom > this.Height - 90)
+
                     {
                         gameOver();
                         break;
                     }
                     x.Top += speed;
-                 
                 }
             }
 
-            foreach(Control i in this.Controls)
+            foreach (Control i in this.Controls)
             {
-                foreach(Control j in this.Controls)
+                foreach (Control j in this.Controls)
                 {
-                    if(i is PictureBox && i.Tag == "invader")
+                    if (i is PictureBox && i.Tag == "invader" && j is PictureBox && j.Tag == "bullet")
                     {
-                        if(j is PictureBox && j.Tag == "bullet")
+                        if (i.Bounds.IntersectsWith(j.Bounds))
                         {
-                            if (i.Bounds.IntersectsWith(j.Bounds))
-                            {
-                                score++;
-                                this.Controls.Remove(i);
-                                this.Controls.Remove(j);
-                            }
+                            score++;
+                            this.Controls.Remove(i);
+                            this.Controls.Remove(j);
                         }
                     }
                 }
-            }
-
-            scoreLabel.Text = "Score: " + score;
-            if(score > totalEnemies - 1)
-            {  
-                gameOver();
-                //MessageBox.Show("You Saved Earth!");  fix this later pls!
             }
         }
 
