@@ -18,21 +18,33 @@ namespace SpaceInvaders
     public partial class GameMap : Form
     {
         Form1 form = new Form1();
-
+        //move left
         bool goLeft = false;
+        //move right
         bool goRight = false;
+        //speed for enemies
         int speed = 1;
+        //overall score
         int score = 0;
+        //if button is pressed
         bool isPressed;
+        //keep the number of enemies (added dynamically)
         int totalEnemies = 0;
+        //the players speed
         int playerSpeed = 6;
+        //account document
         AccountDoc accDoc;
+        //an account
         Account account;
+        //name of the file used to store accounts
         private String FileName;
+        //gameplay audio
         private SoundPlayer soundPlayer;
+        //game over audio
         private SoundPlayer soundPlayer1;
-        
-        
+        //list to keep all of the enemies
+        List<Control> enemies = new List<Control>();
+
 
         public GameMap(Account selectedAcc, AccountDoc accDoc)
         {
@@ -61,7 +73,7 @@ namespace SpaceInvaders
             this.timer1.Start();
         }
 
-        List<Control> enemies = new List<Control>();
+        
 
         private void fillList()
         {
