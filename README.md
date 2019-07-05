@@ -68,7 +68,8 @@ public partial class GameMap : Form
 ```c#
 [Serializable]
 public class AccountDoc
-
+```
+```c#
 [Serializable]
 public class Account : ISerializable
 ```
