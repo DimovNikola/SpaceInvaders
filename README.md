@@ -75,6 +75,11 @@ public class AccountDoc
 public class Account : ISerializable
 ```
 
+Со цел да се изврши серијализација и десеријализација се користат следните функции:
+
+* saveFile() ; Да се зачуваат податоци во посебен фајл.
+* openFile() ; Да се отвори фајлот и да се прочитаат зачуваните податоци.
+
 ### 3.1 Алгоритми
 Со цел да се достигни функционалноста на самата програма потребно е создавањето на специфични функции. Некои од користените функции се:
 
@@ -90,3 +95,36 @@ public class Account : ISerializable
     Исто така се користи и функцијата *generateNewWave();* која што ја повикува функцијата *fillList();* и додава нови непријатели односно нов бран.
     
 * shootBullet() ; Генерира нов „куршум“ односно нова слика од куршум со свои димензии и координати.
+
+* gameOver() ; Го означува крајот на играта. 
+
+***
+***
+
+# 1. Documentation in English
+
+## 1. Description
+This application represents the classic arcade game Space Invaders. However even if it's not exactly the same as the original, it is fairly close to it. The application design is in a retro like style, the game has some functionalities such as saving and deleting the accounts along with their last scores.
+
+## 2. Instructions
+When the first window opens you have the options to create a new account by filling the empty textbox with your name and clicking on the "Create Account" button. After that you are able to select an account and press the "Play" button. When the button "Play" is pressed, a new form will appear that represents the actuall game. 
+
+## 2.1 Instructions to play the game
+You play the game by using the left and right keys on your keyboard to move your character left and right.When You press the spacebar on your keyboard your character (the hero) will shoot at the enemies who are dropping down twords him. If the enemies bounds intersect with your characters bounds the game is over!
+
+## 2.2 What's the goal?
+
+* The goal here is to get as manny points as possible by killing more and more enemies! 
+* The game cannot be won!
+* New waves of enemies will appear after the previous wave is destroyed! 
+
+# Licence:
+#License This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+# Disclaimer:
+1. I am not the legal owner of the audio files nor images used in this project!
+2. The song used in the gameplay is "I am the program" by "Mega Drive"
+3. Given that the project is a non profit one, I have no intent of gaining any financial income (nor any kind of income) whilst using content I do not own.
+4. This is a school project and it will remain as such.
